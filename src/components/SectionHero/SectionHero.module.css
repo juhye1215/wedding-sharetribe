@@ -61,9 +61,11 @@
 .heroMainTitle {
   @apply --marketplaceHeroTitleFontStyles;
   color: var(--matterColorLight);
+  margin:0 auto;
+  text-align: center;
 
   composes: animation;
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
 
   @media (--viewportMedium) {
     max-width: var(--SectionHero_desktopTitleMaxWidth);
@@ -74,10 +76,11 @@
   @apply --marketplaceH4FontStyles;
 
   color: var(--matterColorLight);
-  margin: 0 0 32px 0;
+  margin: 0 auto;
+  text-align: center;
 
   composes: animation;
-  animation-delay: 0.65s;
+  animation-delay: 0.3s;
 
   @media (--viewportMedium) {
     max-width: var(--SectionHero_desktopTitleMaxWidth);
@@ -89,7 +92,9 @@
   @apply --marketplaceButtonStyles;
   composes: animation;
 
-  animation-delay: 0.8s;
+  animation-delay: 0.5s;
+  margin:0 auto;
+  margin-top: 2rem;
 
   @media (--viewportMedium) {
     display: block;
