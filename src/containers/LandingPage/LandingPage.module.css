@@ -1,4 +1,5 @@
 @import '../../styles/customMediaQueries.css';
+@import '../../styles/propertySets.css';
 
 .root {
 }
@@ -49,6 +50,11 @@
 
 .section {
   overflow: auto;
+}
+
+.subtitle{
+  margin-top: -1rem;
+  color:rgb(128, 128, 128)
 }
 
 /* Square corners for the last section if it's even */
@@ -112,4 +118,42 @@
   @media (--viewportLarge) {
     top: calc(-1 * var(--LandingPage_sectionMarginTopLarge));
   }
+}
+
+
+.cardEffect {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.cardEffect:hover {
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+  transform: scale(1.05);
+}
+
+
+/* A wrapper for a responsive image that holds it's aspect ratio */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  transition: var(--transitionStyleButton);
+
+  &:hover {
+    transform: scale(1.02);
+  /*  box-shadow: var(--boxShadowSectionLocationHover);*/
+  }
+}
+
+
+
+
+.title {
+  @apply --marketplaceH2FontStyles;
+  color: var(--matterColorDark);
+  margin: 15px 0;
+}
+.subtitle{
+  @apply --marketplaceMessageFontStyles ;
+  color: var(--matterColor);
 }

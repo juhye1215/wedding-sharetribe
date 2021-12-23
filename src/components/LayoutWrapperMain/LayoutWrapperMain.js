@@ -13,7 +13,7 @@ const LayoutWrapperMain = props => {
 
   return (
     <div className={classes} role="main">
-      {children}
+      {children} 
     </div>
   );
 };
