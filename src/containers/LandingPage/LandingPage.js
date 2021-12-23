@@ -122,16 +122,19 @@ export const LandingPageComponent = props => {
            <Col xs={12} md={6} >
            <img src={require("./chapel.png").default} className={css.imageWrapper}/>
            <p className={css.title}>Chapel</p>
+           <p className={css.subtitle}>Enjoy our beautiful venues</p>
              </Col>
            <Col xs={12} md={6} >
            <img src={require("./oceanfront.png").default} className={css.imageWrapper}/>
            <p className={css.title}>Ocean Front</p>
+           <p className={css.subtitle}>Enjoy our beautiful venues</p>
            </Col>
          </Row>
          <Row >
          <Col xs={12} md={6} >
            <img src={hotel} className={css.imageWrapper}/>
            <p className={css.title}>Hotel</p>
+           <p className={css.subtitle}>Enjoy our beautiful venues</p>
           </Col>
            <Col xs={12} md={6}>
            <img src={require("./outdoor.png").default} className={css.imageWrapper}/>
