@@ -48,6 +48,32 @@ export const LandingPageComponent  = props => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
   return (
     <Page
@@ -79,14 +105,14 @@ export const LandingPageComponent  = props => {
           <ul className={css.sections}>
           <li className={css.slickSection}>
           <Slider {...settings}>
-             <Card className={css.cardEffect}>
+             <Card className={css.cardEffect} xs={12} md={6} lg={3}>
                  <Card.Img variant="top" src={card1} />
                   <Card.Body>
                     <Card.Title>53 by the sea</Card.Title>
                       <Card.Text>1280 Ala Moana Blvd, Honolulu</Card.Text>
                   </Card.Body>
                 </Card>
-                <Card className={css.cardEffect}>
+                <Card className={css.cardEffect} >
                  <Card.Img variant="top" src={card2} />
                   <Card.Body>
                     <Card.Title>Magnolia Hawaii</Card.Title>
