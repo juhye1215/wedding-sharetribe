@@ -12,36 +12,30 @@ const defaultLocations = [
     id: 'default-Oahu',
     predictionPlace: {
       address: 'Honolulu, Hawaii',
-      bounds: new LatLngBounds(new LatLng(60.29783, 25.25448), new LatLng(59.92248, 24.78287)),
+      bounds: new LatLngBounds(new LatLng(21.263297, -157.807502), new LatLng(21.322430, -157.929429)),
     },
   },
   {
     id: 'default-Big Island',
     predictionPlace: {
       address: 'Big Island, Hawaii',
-      bounds: new LatLngBounds(new LatLng(60.53045, 22.38197), new LatLng(60.33361, 22.06644)),
+      bounds: new LatLngBounds(new LatLng(19.896724, -154.923142), new LatLng(19.296176, -156.030360)),
     },
   },
   {
     id: 'default-Maui',
     predictionPlace: {
       address: 'Maui, Hawaii',
-      bounds: new LatLngBounds(new LatLng(61.83657, 24.11838), new LatLng(61.42728, 23.5422)),
+      bounds: new LatLngBounds(new LatLng(20.894206, -156.436857), new LatLng(20.879942, -156.679292)),
     },
   },
   {
     id: 'default-Kauai',
     predictionPlace: {
       address: 'Kauai, Hawaii',
-      bounds: new LatLngBounds(new LatLng(65.56434, 26.77069), new LatLng(64.8443, 24.11494)),
+      bounds: new LatLngBounds(new LatLng(22.225255, -159.303817), new LatLng(21.911090, -159.765205)),
     },
   },
-  {
-    id: 'default-Lanai',
-    predictionPlace: {
-      address: 'Lanai, Hawaii',
-      bounds: new LatLngBounds(new LatLng(66.16997, 29.16773), new LatLng(66.16095, 29.13572)),
-    },
-  },
+
 ];
 export default defaultLocations;

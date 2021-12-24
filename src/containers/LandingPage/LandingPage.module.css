@@ -51,7 +51,15 @@
 .section {
   overflow: auto;
 }
-
+.slickSection{
+  padding-top:2.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: auto;
+}
+.listingSection{
+  padding-top:6.5rem;
+}
 .subtitle{
   margin-top: -1rem;
   color:rgb(128, 128, 128)
@@ -124,6 +132,8 @@
 .cardEffect {
   transition: all 0.2s ease;
   cursor: pointer;
+  max-width:380px;
+  margin:1rem 0.25rem; 
 }
 
 .cardEffect:hover {

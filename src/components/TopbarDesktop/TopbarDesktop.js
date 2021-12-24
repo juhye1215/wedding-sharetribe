@@ -143,14 +143,18 @@ const TopbarDesktop = props => {
       </NamedLink>
       {search}
       
-      <NamedLink name="LoginPage" className={css.navMenu}> <span>Menu 1</span></NamedLink>
+      <NamedLink name="LandingPage" className={css.navMenu}> <span>Menu 1</span></NamedLink>
       <NamedLink name="LandingPage" className={css.navMenu}> <span>Menu 2</span> </NamedLink>
       <NamedLink name="LandingPage" className={css.navMenu}> <span>Menu 3</span> </NamedLink>
-      <NamedLink name="NewListingPage" className={css.createListingLink}>
+      <NamedLink name="LandingPage" className={css.navMenu}> <span>Menu 4</span> </NamedLink>
+
+      {/* add sauna- 리스트 추가하는 페이지도이동하는 진짜 링크 
+       <NamedLink name="NewListingPage" className={css.createListingLink}>
         <span className={css.createListing}>
           <FormattedMessage id="TopbarDesktop.createListing" />
         </span>
-      </NamedLink>
+      </NamedLink> */}
+
       {inboxLink}
       {profileMenu}
       {signupLink}

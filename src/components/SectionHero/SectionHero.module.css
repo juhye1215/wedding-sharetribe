@@ -39,7 +39,7 @@
 
 .heroContent {
   margin: 0 24px 0 24px;
-
+  
   @media (--viewportMedium) {
     margin: 0 7.5vw 0 7.5vw;
   }
@@ -63,7 +63,6 @@
   color: var(--matterColorLight);
   margin:0 auto;
   text-align: center;
-
   composes: animation;
   animation-delay: 0.3s;
 
@@ -74,17 +73,15 @@
 
 .heroSubTitle {
   @apply --marketplaceH4FontStyles;
-
-  color: var(--matterColorLight);
-  margin: 0 auto;
+  color: var(--matterColorNegative);
+  margin:0 auto;
+  padding-top:1.5rem;
   text-align: center;
-
   composes: animation;
   animation-delay: 0.3s;
 
   @media (--viewportMedium) {
     max-width: var(--SectionHero_desktopTitleMaxWidth);
-    margin: 0 0 47px 0;
   }
 }
 
@@ -99,5 +96,8 @@
   @media (--viewportMedium) {
     display: block;
     width: 260px;
+  }
+  &:hover{
+    color:#fff;
   }
 }

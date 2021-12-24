@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -9,7 +9,6 @@ import config from '../../config';
 import {
   Page,
   SectionHero,
-  SectionHowItWorks,
   SectionLocations,
   LayoutSingleColumn,
   LayoutWrapperTopbar,
@@ -24,21 +23,32 @@ import twitterImage from '../../assets/saunatimeTwitter-600x314.jpg';
 import css from './LandingPage.module.css';
 
 import {Card,Row, Col } from 'react-bootstrap';
+
+import Slider from "react-slick";
+
 import hotel from './hotel.png';
 import card1 from './hold.jpg';
 import card2 from './couple.jpg';
+import card3 from './bridemade.jpg';
+import card4 from './flower.jpg';
 
-export const LandingPageComponent = props => {
+export const LandingPageComponent  = props => {
   const { history, intl, location, scrollingDisabled } = props;
 
-  // Schema for search engines (helps them to understand what this page is about)
-  // http://schema.org
-  // We are using JSON-LD format
   const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'LandingPage.schemaTitle' }, { siteTitle });
   const schemaDescription = intl.formatMessage({ id: 'LandingPage.schemaDescription' });
   const schemaImage = `${config.canonicalRootURL}${facebookImage}`;
-
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
   return (
     <Page
       className={css.root}
@@ -67,13 +77,36 @@ export const LandingPageComponent = props => {
             <SectionHero className={css.hero} history={history} location={location}/>
             </div>
           <ul className={css.sections}>
-          <li className={css.section}>
-
-        <div class="container">
-           <div class="row my-5">
-             <h1>Featured Wedding Venues</h1>
-             <h3 className={css.subtitle}>Browse the featured venues recently booked</h3>
-              <div class="col-lg-3 col-md-6 col-12">
+          <li className={css.slickSection}>
+          <Slider {...settings}>
+             <Card className={css.cardEffect}>
+                 <Card.Img variant="top" src={card1} />
+                  <Card.Body>
+                    <Card.Title>53 by the sea</Card.Title>
+                      <Card.Text>1280 Ala Moana Blvd, Honolulu</Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card className={css.cardEffect}>
+                 <Card.Img variant="top" src={card2} />
+                  <Card.Body>
+                    <Card.Title>Magnolia Hawaii</Card.Title>
+                      <Card.Text>1280 Ala Moana Blvd, Honolulu</Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card className={css.cardEffect}>
+                 <Card.Img variant="top" src={card3} />
+                  <Card.Body>
+                    <Card.Title>Wedding Shop</Card.Title>
+                      <Card.Text>1280 Ala Moana Blvd, Honolulu</Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card className={css.cardEffect}>
+                 <Card.Img variant="top" src={card4}/>
+                  <Card.Body>
+                    <Card.Title>Beach</Card.Title>
+                      <Card.Text>1280 Ala Moana Blvd, Honolulu</Card.Text>
+                  </Card.Body>
+                </Card>
                 <Card className={css.cardEffect}>
                  <Card.Img variant="top" src={card1} />
                   <Card.Body>
@@ -81,42 +114,17 @@ export const LandingPageComponent = props => {
                       <Card.Text>1280 Ala Moana Blvd, Honolulu</Card.Text>
                   </Card.Body>
                 </Card>
-             </div>
-          <div class="col-lg-3 col-md-6 col-12">
-             <Card className={css.cardEffect}>
-                 <Card.Img variant="top" src={card2} />
+                <Card className={css.cardEffect}>
+                 <Card.Img variant="top" src={card3} />
                   <Card.Body>
-                    <Card.Title>Magnolia Hawaii</Card.Title>
+                    <Card.Title>Wedding Shop</Card.Title>
                       <Card.Text>1280 Ala Moana Blvd, Honolulu</Card.Text>
                   </Card.Body>
                 </Card>
-         </div>
-         <div class="col-lg-3 col-md-6 col-12">
-            <Card className={css.cardEffect}>
-                 <Card.Img variant="top" src={card1}/>
-                  <Card.Body>
-                    <Card.Title>Chapel</Card.Title>
-                      <Card.Text>1280 Ala Moana Blvd, Honolulu</Card.Text>
-                  </Card.Body>
-                </Card>
-             </div>
-          <div class="col-lg-3 col-md-6 col-12">
-             <Card  className={css.cardEffect}>
-                 <Card.Img variant="top" src={card2}/>
-                  <Card.Body>
-                    <Card.Title>Chapel</Card.Title>
-                      <Card.Text>1280 Ala Moana Blvd, Honolulu</Card.Text>
-                  </Card.Body>
-                </Card>
-           </div>  
-           </div>
-        </div>          
+            </Slider>
       </li>
 
- <SimpleSlider/>
-
-
-     <li className={css.section}>
+     <li className={css.listingSection}>
         <div className={css.sectionContentFirstChild}>    
          <Row>
            <Col xs={12} md={6} >
@@ -142,32 +150,23 @@ export const LandingPageComponent = props => {
            <p className={css.subtitle}>Enjoy our beautiful venues</p>
            </Col>
            </Row>
-           <Row>
-           <Col xs={12} md={6} >
-           <img src={require("./chapel.png").default} className={css.imageWrapper}/>
-           <p className={css.title}>Chapel</p>
-           <p className={css.subtitle}>Enjoy our beautiful venues</p>
-             </Col>
-           <Col xs={12} md={6} >
-           <img src={require("./oceanfront.png").default} className={css.imageWrapper}/>
-           <p className={css.title}>Ocean Front</p>
-           <p className={css.subtitle}>Enjoy our beautiful venues</p>
-           </Col>
-         </Row>
+        <SimpleRow />
+
         </div>
       </li>
       
-
       <li className={css.section}>
         <div className={css.sectionContent}>
           <SectionLocations />
         </div>
       </li>
+      {/* 
       <li className={css.section}>
         <div className={css.sectionContent}>
           <SectionHowItWorks />
         </div>
       </li>
+      */}
     </ul>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
@@ -178,9 +177,20 @@ export const LandingPageComponent = props => {
   );
 
 //컴포넌트 만듬
-function SimpleSlider(){
+function SimpleRow(){
     return(
-      <h1>TEST Sliders</h1>
+      <Row>
+      <Col xs={12} md={6} >
+      <img src={require("./chapel.png").default} className={css.imageWrapper}/>
+      <p className={css.title}>Chapel</p>
+      <p className={css.subtitle}>Enjoy our beautiful venues</p>
+        </Col>
+      <Col xs={12} md={6} >
+      <img src={require("./oceanfront.png").default} className={css.imageWrapper}/>
+      <p className={css.title}>Ocean Front</p>
+      <p className={css.subtitle}>Enjoy our beautiful venues</p>
+      </Col>
+    </Row>
     )
   }
 
